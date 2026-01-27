@@ -1,0 +1,36 @@
+# Python internals
+
+pycache/
+*.py[cod]
+
+# Virtual Environments (Never push these)
+
+venv/
+env/
+.env
+
+# PyInstaller Output (Don't push the huge exe or build folders)
+
+build/
+dist/
+*.spec
+
+# VS Code settings (Optional, but usually good to ignore)
+
+.vscode/
+
+# Project Data (Don't push your test images or CSVs!)
+
+*.csv
+*.xlsx
+*.jpg
+*.jpeg
+*.png
+.webp
+_Error_Report.txt
+
+# Specific folders you might use for testing
+
+Source_Images/
+Output/
+sampledownloader/

@@ -1,0 +1,7 @@
+# Image processing library required for the script
+
+Pillow
+
+# Tool required to build the .exe (Developer only)
+
+pyinstaller
