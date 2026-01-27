@@ -26,7 +26,8 @@ dist/
 *.jpg
 *.jpeg
 *.png
-.webp
+*.webp
+*.spec
 _Error_Report.txt
 
 # Specific folders you might use for testing
