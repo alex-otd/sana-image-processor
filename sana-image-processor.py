@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, ttk, messagebox
 import os
+import sys  # Added sys to check for bundled exe path
 import csv
 from PIL import Image, ImageOps
 import threading
@@ -248,6 +249,24 @@ class App(tk.Tk):
         self.minsize(800, 850)
         self.configure(bg=COLORS["bg_main"])
         
+        # --- ICON SETUP (Fix for Feather Icon) ---
+        # Determine the path to the icon whether running as script or frozen exe
+        if getattr(sys, 'frozen', False):
+            # Running as PyInstaller exe - look in temp folder
+            application_path = sys._MEIPASS
+        else:
+            # Running as script - look in current folder
+            application_path = os.path.dirname(os.path.abspath(__file__))
+            
+        icon_path = os.path.join(application_path, 'app_icon.ico')
+        
+        if os.path.exists(icon_path):
+            try:
+                self.iconbitmap(icon_path)
+            except Exception:
+                pass # Fail silently and use default if icon is corrupt
+        # ------------------------------------------
+
         self.setup_styles()
         
         self.settings = {
